@@ -251,7 +251,7 @@ static OSStatus EZAudioMicrophoneCallback(void                       *inRefCon,
                                                        &propSize)
                         operation:"Failed to get stream format of microphone input scope"];
 #if TARGET_OS_IPHONE
-    self.info->inputFormat.mSampleRate = [[AVAudioSession sharedInstance] sampleRate];
+    self.info->inputFormat.mSampleRate = 44100; //[[AVAudioSession sharedInstance] sampleRate];
     NSAssert(self.info->inputFormat.mSampleRate, @"Expected AVAudioSession sample rate to be greater than 0.0. Did you setup the audio session?");
 #elif TARGET_OS_MAC
 #endif
